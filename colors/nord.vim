@@ -32,6 +32,9 @@ let s:nord12_gui = "#D08770"
 let s:nord13_gui = "#EBCB8B"
 let s:nord14_gui = "#A3BE8C"
 let s:nord15_gui = "#B48EAD"
+" let s:nordsearch_gui = "#ED7D88"
+let s:nordsearch_gui = "#ccccff"
+let s:nord_normal_gui = "#d6d6d6"
 
 let s:nord1_term = "0"
 let s:nord3_term = "8"
@@ -150,7 +153,7 @@ call s:hi("iCursor", s:nord0_gui, s:nord4_gui, "", "NONE", "", "")
 call s:hi("LineNr", s:nord3_gui, s:nord0_gui, s:nord3_term, "NONE", "", "")
 call s:hi("MatchParen", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
 call s:hi("NonText", s:nord2_gui, "", s:nord3_term, "", "", "")
-call s:hi("Normal", s:nord4_gui, s:nord0_gui, "NONE", "NONE", "", "")
+call s:hi("Normal", s:nord_normal_gui, s:nord0_gui, "NONE", "NONE", "", "")
 call s:hi("PMenu", s:nord4_gui, s:nord2_gui, "NONE", s:nord1_term, "NONE", "")
 call s:hi("PmenuSbar", s:nord4_gui, s:nord2_gui, "NONE", s:nord1_term, "", "")
 call s:hi("PMenuSel", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
@@ -191,9 +194,10 @@ endif
 "+--- Gutter ---+
 call s:hi("CursorColumn", "", s:nord1_gui, "NONE", s:nord1_term, "", "")
 if g:nord_cursor_line_number_background == 0
-  call s:hi("CursorLineNr", s:nord4_gui, s:nord0_gui, "NONE", "", "", "")
+  " call s:hi("CursorLineNr", s:nord3_gui, s:nord0_gui, "NONE", "", "", "")
+  call s:hi("CursorLineNr", s:nord15_gui, s:nord0_gui, "NONE", "", "NONE", "")
 else
-  call s:hi("CursorLineNr", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "", "")
+  call s:hi("CursorLineNr", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
 endif
 call s:hi("Folded", s:nord3_gui, s:nord1_gui, s:nord3_term, s:nord1_term, "bold", "")
 call s:hi("FoldColumn", s:nord3_gui, s:nord0_gui, s:nord3_term, "NONE", "", "")
@@ -204,27 +208,29 @@ call s:hi("Directory", s:nord8_gui, "", s:nord8_term, "NONE", "", "")
 
 "+--- Prompt/Status ---+
 call s:hi("EndOfBuffer", s:nord1_gui, "", s:nord1_term, "NONE", "", "")
-call s:hi("ErrorMsg", s:nord4_gui, s:nord11_gui, "NONE", s:nord11_term, "", "")
+call s:hi("ErrorMsg", s:nord11_gui, s:nord0_gui, s:nord11_term, "NONE", "", "")
 call s:hi("ModeMsg", s:nord4_gui, "", "", "", "", "")
 call s:hi("MoreMsg", s:nord4_gui, "", "", "", "", "")
 call s:hi("Question", s:nord4_gui, "", "NONE", "", "", "")
 if g:nord_uniform_status_lines == 0
-  call s:hi("StatusLine", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
-  call s:hi("StatusLineNC", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
-  call s:hi("StatusLineTerm", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
-  call s:hi("StatusLineTermNC", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
+  call s:hi("StatusLine", s:nord8_gui, s:nord0_gui, s:nord8_term, s:nord3_term, "NONE", "")
+  call s:hi("StatusLineNC", s:nord_normal_gui, s:nord0_gui, "NONE", s:nord1_term, "NONE", "")
+  call s:hi("StatusLineTerm", s:nord8_gui, s:nord0_gui, s:nord8_term, s:nord3_term, "NONE", "")
+  call s:hi("StatusLineTermNC", s:nord_normal_gui, s:nord0_gui, "NONE", s:nord1_term, "NONE", "")
 else
   call s:hi("StatusLine", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
   call s:hi("StatusLineNC", s:nord4_gui, s:nord3_gui, "NONE", s:nord3_term, "NONE", "")
   call s:hi("StatusLineTerm", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
   call s:hi("StatusLineTermNC", s:nord4_gui, s:nord3_gui, "NONE", s:nord3_term, "NONE", "")
 endif
-call s:hi("WarningMsg", s:nord0_gui, s:nord13_gui, s:nord1_term, s:nord13_term, "", "")
+call s:hi("WarningMsg", s:nord13_gui, s:nord0_gui, s:nord13_term, s:nord11_term, "", "")
 call s:hi("WildMenu", s:nord8_gui, s:nord1_gui, s:nord8_term, s:nord1_term, "", "")
 
 "+--- Search ---+
-call s:hi("IncSearch", s:nord1_gui, s:nord8_gui, s:nord1_term, s:nord8_term, s:underline, "")
-call s:hi("Search", s:nord1_gui, s:nord8_gui, s:nord1_term, s:nord8_term, "NONE", "")
+call s:hi("IncSearch", s:nordsearch_gui, s:nord1_gui, s:nord11_term, s:nord1_term, s:underline, "")
+call s:hi("Search", s:nordsearch_gui, s:nord1_gui, s:nord11_term, s:nord1_term, "", "")
+" for denite buffer
+call s:hi("SearchBold", s:nordsearch_gui, s:nord1_gui, s:nord11_term, s:nord1_term, "Bold", "")
 
 "+--- Tabs ---+
 call s:hi("TabLine", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
@@ -233,7 +239,7 @@ call s:hi("TabLineSel", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "N
 
 "+--- Window ---+
 call s:hi("Title", s:nord4_gui, "", "NONE", "", "NONE", "")
-call s:hi("VertSplit", s:nord2_gui, s:nord1_gui, s:nord3_term, s:nord1_term, "NONE", "")
+call s:hi("VertSplit", s:nord2_gui, s:nord0_gui, s:nord3_term, s:nord1_term, "NONE", "")
 
 "+----------------------+
 "+ Language Base Groups +
@@ -241,13 +247,17 @@ call s:hi("VertSplit", s:nord2_gui, s:nord1_gui, s:nord3_term, s:nord1_term, "NO
 call s:hi("Boolean", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Character", s:nord14_gui, "", s:nord14_term, "", "", "")
 call s:hi("Comment", s:nord3_gui_brightened[g:nord_comment_brightness], "", s:nord3_term, "", s:italicize_comments, "")
-call s:hi("Conditional", s:nord9_gui, "", s:nord9_term, "", "", "")
+call s:hi("Conditional", s:nord9_gui, "", s:nord9_term, "", "bold", "")
 call s:hi("Constant", s:nord4_gui, "", "NONE", "", "", "")
 call s:hi("Define", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Delimiter", s:nord6_gui, "", s:nord6_term, "", "", "")
 call s:hi("Exception", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Float", s:nord15_gui, "", s:nord15_term, "", "", "")
-call s:hi("Function", s:nord8_gui, "", s:nord8_term, "", "", "")
+" call s:hi("Repeat", s:nord8_gui, s:nord1_gui, s:nord8_term, "", "", "")
+" call s:hi("Conditional", s:nord8_gui, s:nord1_gui, s:nord8_term, "", "", "")
+call s:hi("Function", s:nord_normal_gui, s:nord0_gui, s:nord8_term, "", "bold", "")
+" call s:hi("Function", s:nord8_gui, "", s:nord9_term, "", "bold", "")
+" call s:hi("Function", s:nord9_gui, "", s:nord9_term, "", "bold", "")
 call s:hi("Identifier", s:nord4_gui, "", "NONE", "", "NONE", "")
 call s:hi("Include", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Keyword", s:nord9_gui, "", s:nord9_term, "", "", "")
@@ -255,13 +265,13 @@ call s:hi("Label", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Number", s:nord15_gui, "", s:nord15_term, "", "", "")
 call s:hi("Operator", s:nord9_gui, "", s:nord9_term, "", "NONE", "")
 call s:hi("PreProc", s:nord9_gui, "", s:nord9_term, "", "NONE", "")
-call s:hi("Repeat", s:nord9_gui, "", s:nord9_term, "", "", "")
+call s:hi("Repeat", s:nord9_gui, "", s:nord9_term, "", "bold", "")
 call s:hi("Special", s:nord4_gui, "", "NONE", "", "", "")
-call s:hi("SpecialChar", s:nord13_gui, "", s:nord13_term, "", "", "")
+call s:hi("SpecialChar", s:nord14_gui, "", s:nord14_term, "", "", "")
 call s:hi("SpecialComment", s:nord8_gui, "", s:nord8_term, "", s:italicize_comments, "")
 call s:hi("Statement", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("StorageClass", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("String", s:nord14_gui, "", s:nord14_term, "", "", "")
+call s:hi("String", s:nord3_gui_brightened[20], "", s:nord3_term, "", "NONE", "")
 call s:hi("Structure", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Tag", s:nord4_gui, "", "", "", "", "")
 call s:hi("Todo", s:nord13_gui, "NONE", s:nord13_term, "NONE", "", "")
@@ -270,9 +280,21 @@ call s:hi("Typedef", s:nord9_gui, "", s:nord9_term, "", "", "")
 hi! link Macro Define
 hi! link PreCondit PreProc
 
+" hi! link SpecialChar String
+" hi! link Character String
+
 "+-----------+
 "+ Languages +
 "+-----------+
+" D
+hi! link dFunc Function
+hi! link dMixin Type
+" Python
+hi! link pythonStatement Type
+hi! link pSelf Type
+" General flow
+hi! link keywordFlowControl Conditional
+
 call s:hi("awkCharClass", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("awkPatterns", s:nord9_gui, "", s:nord9_term, "", "bold", "")
 hi! link awkArrayElement Identifier
@@ -488,6 +510,14 @@ hi! link yamlDocumentStart Keyword
 " > w0rp/ale
 call s:hi("ALEWarningSign", s:nord13_gui, "", s:nord13_term, "", "", "")
 call s:hi("ALEErrorSign" , s:nord11_gui, "", s:nord11_term, "", "", "")
+
+" Neomake
+call s:hi("NeomakeWarningSign", s:nord13_gui, "", s:nord13_term, "", "", "")
+hi! link NeomakeVirtualtextError ErrorMsg
+
+" Sneak
+call s:hi("SneakLabel", s:nordsearch_gui, s:nord1_gui, s:nord11_term, s:nord1_term, "", "")
+call s:hi("Sneak", s:nordsearch_gui, s:nord1_gui, s:nord11_term, s:nord1_term, s:underline, "")
 
 " GitGutter
 " > airblade/vim-gitgutter
