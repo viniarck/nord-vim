@@ -31,7 +31,9 @@ let s:nord14_gui = "#A3BE8C"
 let s:nord15_gui = "#B48EAD"
 " let s:nordsearch_gui = "#ED7D88"
 let s:nordsearch_gui = "#ccccff"
-let s:nord_normal_gui = "#d6d6d6"
+" let s:nord_normal_gui = "#d6d6d6"
+" let s:nord_normal_gui = "#ffe6cc"
+let s:nord_normal_gui = "#c9c9c9"
 
 let s:nord1_term = "0"
 let s:nord3_term = "8"
@@ -329,6 +331,10 @@ hi! link asciidocURL markdownLinkText
 " Python
 hi! link pythonStatement Type
 hi! link pSelf Type
+hi! link pFunc Function
+" TypeScript
+hi! link typescriptFuncKeyword StorageClass
+hi! link jFunc Function
 " General flow
 hi! link keywordFlowControl Conditional
 
