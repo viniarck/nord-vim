@@ -300,6 +300,9 @@ hi! link typescriptFuncKeyword StorageClass
 hi! link jFunc Function
 " General flow
 hi! link keywordFlowControl Conditional
+" Telescope
+" hi! link TelescopeMatching IncSearch
+hi! link TelescopeMatching Search
 
 call s:hi("awkCharClass", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("awkPatterns", s:nord9_gui, "", s:nord9_term, "", "bold", "")
