@@ -288,9 +288,6 @@ hi! link PreCondit PreProc
 "+-----------+
 "+ Languages +
 "+-----------+
-" D
-hi! link dFunc Function
-hi! link dMixin Type
 " Python
 hi! link pythonStatement Type
 hi! link pSelf Type
