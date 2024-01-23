@@ -29,10 +29,7 @@ let s:nord12_gui = "#D08770"
 let s:nord13_gui = "#EBCB8B"
 let s:nord14_gui = "#A3BE8C"
 let s:nord15_gui = "#B48EAD"
-" let s:nordsearch_gui = "#ED7D88"
 let s:nordsearch_gui = "#ccccff"
-" let s:nord_normal_gui = "#d6d6d6"
-" let s:nord_normal_gui = "#ffe6cc"
 let s:nord_normal_gui = "#c9c9c9"
 
 let s:nord1_term = "0"
@@ -272,11 +269,7 @@ call s:hi("Define", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Delimiter", s:nord6_gui, "", s:nord6_term, "", "", "")
 call s:hi("Exception", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Float", s:nord15_gui, "", s:nord15_term, "", "", "")
-" call s:hi("Repeat", s:nord8_gui, s:nord1_gui, s:nord8_term, "", "", "")
-" call s:hi("Conditional", s:nord8_gui, s:nord1_gui, s:nord8_term, "", "", "")
 call s:hi("Function", s:nord_normal_gui, s:nord0_gui, s:nord8_term, "", "bold", "")
-" call s:hi("Function", s:nord8_gui, "", s:nord9_term, "", "bold", "")
-" call s:hi("Function", s:nord9_gui, "", s:nord9_term, "", "bold", "")
 call s:hi("Identifier", s:nord4_gui, "", "NONE", "", "NONE", "")
 call s:hi("Include", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Keyword", s:nord9_gui, "", s:nord9_term, "", "", "")
@@ -301,13 +294,9 @@ hi! link Macro Define
 hi! link PreCondit PreProc
 hi! link Variable Identifier
 
-" hi! link SpecialChar String
-" hi! link Character String
-
 "+-----------+
 "+ Languages +
 "+-----------+
-<<<<<<< HEAD
 call s:hi("asciidocAttributeEntry", s:nord10_gui, "", s:nord10_term, "", "", "")
 call s:hi("asciidocAttributeList", s:nord10_gui, "", s:nord10_term, "", "", "")
 call s:hi("asciidocAttributeRef", s:nord10_gui, "", s:nord10_term, "", "", "")
@@ -329,12 +318,6 @@ hi! link asciidocQuotedUnconstrainedBold asciidocQuotedBold
 hi! link asciidocQuotedUnconstrainedEmphasized asciidocQuotedEmphasized
 hi! link asciidocURL markdownLinkText
 
-||||||| parent of 4399980 (chore: removed D specific syntax)
-" D
-hi! link dFunc Function
-hi! link dMixin Type
-=======
->>>>>>> 4399980 (chore: removed D specific syntax)
 " Python
 hi! link pythonStatement Type
 hi! link pSelf Type
