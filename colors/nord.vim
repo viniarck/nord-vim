@@ -307,6 +307,7 @@ hi! link Variable Identifier
 "+-----------+
 "+ Languages +
 "+-----------+
+<<<<<<< HEAD
 call s:hi("asciidocAttributeEntry", s:nord10_gui, "", s:nord10_term, "", "", "")
 call s:hi("asciidocAttributeList", s:nord10_gui, "", s:nord10_term, "", "", "")
 call s:hi("asciidocAttributeRef", s:nord10_gui, "", s:nord10_term, "", "", "")
@@ -328,6 +329,12 @@ hi! link asciidocQuotedUnconstrainedBold asciidocQuotedBold
 hi! link asciidocQuotedUnconstrainedEmphasized asciidocQuotedEmphasized
 hi! link asciidocURL markdownLinkText
 
+||||||| parent of 4399980 (chore: removed D specific syntax)
+" D
+hi! link dFunc Function
+hi! link dMixin Type
+=======
+>>>>>>> 4399980 (chore: removed D specific syntax)
 " Python
 hi! link pythonStatement Type
 hi! link pSelf Type
