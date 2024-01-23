@@ -318,10 +318,6 @@ hi! link asciidocQuotedUnconstrainedBold asciidocQuotedBold
 hi! link asciidocQuotedUnconstrainedEmphasized asciidocQuotedEmphasized
 hi! link asciidocURL markdownLinkText
 
-" Python
-hi! link pythonStatement Type
-hi! link pSelf Type
-hi! link pFunc Function
 " TypeScript
 hi! link typescriptFuncKeyword StorageClass
 hi! link jFunc Function
@@ -490,8 +486,12 @@ call s:hi("podCmdText", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("podVerbatimLine", s:nord4_gui, "", "NONE", "", "", "")
 hi! link podFormat Keyword
 
+" Python
 hi! link pythonBuiltin Type
 hi! link pythonEscape SpecialChar
+hi! link pythonStatement Type
+hi! link pSelf Type
+hi! link pFunc Function
 
 call s:hi("rubyConstant", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("rubySymbol", s:nord6_gui, "", s:nord6_term, "", s:bold, "")
