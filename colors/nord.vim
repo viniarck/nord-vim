@@ -327,6 +327,10 @@ hi! link keywordFlowControl Conditional
 " hi! link TelescopeMatching IncSearch
 hi! link TelescopeMatching Search
 
+" nvim 0.10 changes
+hi! link WinSeparator VertSplit
+hi! link CurSearch Search
+
 call s:hi("awkCharClass", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("awkPatterns", s:nord9_gui, "", s:nord9_term, "", s:bold, "")
 hi! link awkArrayElement Identifier
