@@ -332,6 +332,24 @@ hi! link WinSeparator VertSplit
 hi! link CurSearch Search
 hi! link NormalFloat DiffText
 
+" snacks terminal to match colors
+"hi! link SnacksWinBar Normal
+"hi! link SnacksNormal Normal
+"hi! link SnacksBackdrop Normal
+
+" TODO fix later if start to use snacks picker
+"hi! link SnacksPicker Normal
+"hi! link SnacksPickerBorder Normal
+"hi! link SnacksPickerInput Normal
+"hi! link SnacksPickerInputBorder Normal
+"hi! link SnacksPickerList Normal
+"hi! link SnacksPickerListBorder Normal
+"hi! link SnacksPickerPreview Normal
+"hi! link SnacksPickerPreviewBorder Normal
+"hi! link SnacksPickerTitle Normal
+"hi! link SnacksPickerPreviewTitle Normal
+"hi! link SnacksPickerInputTitle Normal
+
 call s:hi("awkCharClass", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("awkPatterns", s:nord9_gui, "", s:nord9_term, "", s:bold, "")
 hi! link awkArrayElement Identifier
